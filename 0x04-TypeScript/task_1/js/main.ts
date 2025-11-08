@@ -29,3 +29,30 @@ const teacher2: Teacher = {
 
 console.log(teacher1); // Still useful for the browser console
 
+
+
+interface Directors extends Teacher{
+    numberOfReport: number;
+}
+
+const director1: Directors = {
+    firstName: "Charlie",
+    lastName: "Brown",
+    fullTimeEmployee: true,
+    location: "Texas",
+    age: 50,
+    contract: false,
+    numberOfReport: 5
+};
+
+const director2: Directors = {
+    firstName: "Diana",
+    lastName: "Prince",
+    fullTimeEmployee: true,
+    location: "Florida",
+    age: 45,
+    contract: true,
+    numberOfReport: 10
+};
+
+console.log(director1); // Still useful for the browser console
