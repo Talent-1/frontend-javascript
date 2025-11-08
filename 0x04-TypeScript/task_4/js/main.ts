@@ -1,10 +1,10 @@
 // task_4/main.ts
 
-/// <reference path="./js/subjects/Teacher.ts" />
-/// <reference path="./js/subjects/Subject.ts" />
-/// <reference path="./js/subjects/Cpp.ts" />
-/// <reference path="./js/subjects/React.ts" />
-/// <reference path="./js/subjects/Java.ts" />
+/// <reference path="./subjects/Teacher.ts" />
+/// <reference path="./subjects/Subject.ts" />
+/// <reference path="./subjects/Cpp.ts" />
+/// <reference path="./subjects/React.ts" />
+/// <reference path="./subjects/Java.ts" />
 
 // 1. Create constants for Subjects (Removed 'export' and explicit type)
 const cpp = new Subjects.Cpp(); // Matches: "const cpp = new Cpp()"
