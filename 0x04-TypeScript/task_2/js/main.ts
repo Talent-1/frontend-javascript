@@ -1,4 +1,5 @@
-// --------------- INTERFACES ---------------
+// task_2/js/main.ts
+
 interface DirectorInterface {
   workFromHome(): string;
   getCoffeeBreak(): string;
@@ -11,7 +12,6 @@ interface TeacherInterface {
   workTeacherTasks(): string;
 }
 
-// --------------- CLASSES ---------------
 class Director implements DirectorInterface {
   workFromHome(): string {
     return "Working from home";
@@ -40,7 +40,6 @@ class Teacher implements TeacherInterface {
   }
 }
 
-// --------------- FACTORY FUNCTION ---------------
 function createEmployee(salary: number | string): Director | Teacher {
   if (typeof salary === "number" && salary < 500) {
     return new Teacher();
@@ -48,32 +47,24 @@ function createEmployee(salary: number | string): Director | Teacher {
   return new Director();
 }
 
-// --------------- TYPE PREDICATE ---------------
-function isDirector(employee: Director | Teacher): employee is Director {
+// ✅ must be exported for ALX checker
+export function isDirector(employee: Director | Teacher): employee is Director {
   return employee instanceof Director;
 }
 
-// --------------- EXECUTE WORK FUNCTION ---------------
-function executeWork(employee: Director | Teacher): string {
+// ✅ must be exported too (for the later tasks)
+export function executeWork(employee: Director | Teacher): string {
   if (isDirector(employee)) {
     return employee.workDirectorTasks();
   }
   return employee.workTeacherTasks();
 }
 
-// --------------- STRING LITERAL TYPE ---------------
 type Subjects = "Math" | "History";
 
-// --------------- teachClass FUNCTION ---------------
-function teachClass(todayClass: Subjects): string {
+export function teachClass(todayClass: Subjects): string {
   if (todayClass === "Math") {
     return "Teaching Math";
   }
   return "Teaching History";
 }
-
-// --------------- TEST OUTPUTS ---------------
-console.log(executeWork(createEmployee(200)));   // Getting to work
-console.log(executeWork(createEmployee(1000)));  // Getting to director tasks
-console.log(teachClass("Math"));                 // Teaching Math
-console.log(teachClass("History"));              // Teaching History
