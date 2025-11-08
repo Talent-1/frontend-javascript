@@ -1,5 +1,7 @@
 // task_4/js/subjects/Subject.ts
 
+/// <reference path="./Teacher.ts" /> // (Assuming you need this reference)
+
 namespace Subjects {
   /**
    * @class Subject
@@ -9,11 +11,12 @@ namespace Subjects {
     protected teacher!: Teacher;
 
     /**
-     * @setter setTeacher
+     * @method setTeacher
      * Sets the teacher for the subject.
      * @param teacher - The teacher object to assign.
      */
-    set setTeacher(teacher: Teacher) {
+    // CHANGE: Remove 'set' keyword and use standard method syntax
+    public setTeacher(teacher: Teacher): void {
       this.teacher = teacher;
     }
   }
